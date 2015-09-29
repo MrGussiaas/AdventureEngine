@@ -8,6 +8,7 @@ import java.util.Map;
 public class ConcreteDungeon implements IDungeon {
 
 	private List<IRoom> rooms = new ArrayList<IRoom>(10);
+	
 	private Map<IWarp, IWarp> topMappings = new HashMap<IWarp, IWarp>(10);
 	private Map<IWarp, IWarp> rightMappings = new HashMap<IWarp, IWarp>(10);
 	private Map<IWarp, IWarp> bottomMappings = new HashMap<IWarp, IWarp>(10);
