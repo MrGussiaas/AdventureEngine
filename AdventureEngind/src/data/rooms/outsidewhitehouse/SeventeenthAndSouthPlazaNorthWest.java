@@ -17,7 +17,7 @@ public class SeventeenthAndSouthPlazaNorthWest extends ConcreteRoom {
 		setId(2);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\seventeenthandeastnorthwest.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\seventeenthandeastnorthwest.bmp");
 		addObject(background);
 		
 		ITrigger northWarp = new TopRoomTrigger(ScreenSettings.getInstance().getResWide() / 2, ScreenSettings.getInstance().getResHeight() - 100);

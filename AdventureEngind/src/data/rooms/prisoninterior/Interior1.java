@@ -23,7 +23,7 @@ public class Interior1 extends ConcreteRoom {
 	public Interior1(){
 		setId(1);
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\PrisonInterior\\PrisonInterior1.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior\\PrisonInterior1.bmp");
 		
 		IDrawableObject tourDesk = new TourDesk();
 		tourDesk.setX(543);

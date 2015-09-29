@@ -9,7 +9,7 @@ public class LaunderySign extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public LaunderySign(){
-		super.setSpriteFile(".\\images\\penn2\\launderysign.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\launderysign.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

@@ -9,7 +9,7 @@ public class ShopDoor extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public ShopDoor(){
-		super.setSpriteFile(".\\images\\penn2\\launderyDoor.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\launderyDoor.bmp");
 		
 	}
 	public IScriptRunner getActionScript() {

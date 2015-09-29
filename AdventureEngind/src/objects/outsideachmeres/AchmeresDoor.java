@@ -29,7 +29,7 @@ public class AchmeresDoor extends ConcreteDrawableObject implements IScriptableO
 	
 	public AchmeresDoor(){
 		setInternalState(IGameObject.InternalObjectStates.CLOSED);
-		setSpriteFile(".\\images\\nineteenth2\\achmeresdoorClosed.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresdoorClosed.bmp");
 	}
 
 	@Override

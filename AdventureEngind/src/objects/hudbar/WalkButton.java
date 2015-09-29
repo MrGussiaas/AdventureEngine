@@ -19,8 +19,8 @@ public class WalkButton extends ConcreteDrawableObject implements IInterfaceable
 	
 	public WalkButton(){
 		try {
-			upStateImage = ImageIO.read(new File(".\\images\\walkIcon.bmp"));
-			downStateImage = ImageIO.read(new File(".\\images\\walkIconUp.bmp"));
+			upStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"walkIcon.bmp"));
+			downStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"walkIconUp.bmp"));
 			bufImage = upStateImage;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

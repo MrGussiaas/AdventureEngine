@@ -19,8 +19,8 @@ public class ActionButton extends ConcreteDrawableObject implements IInterfaceab
 	
 	public ActionButton(){
 		try {
-			upStateImage = ImageIO.read(new File(".\\images\\actionIcon.bmp"));
-			downStateImage = ImageIO.read(new File(".\\images\\actionIconUp.bmp"));
+			upStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"actionIcon.bmp"));
+			downStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"actionIconUp.bmp"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

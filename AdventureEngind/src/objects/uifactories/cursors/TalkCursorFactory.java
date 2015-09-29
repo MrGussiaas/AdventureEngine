@@ -26,7 +26,7 @@ public class TalkCursorFactory implements ICursorFactory {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		BufferedImage answer;
 		try {
-			answer = ImageIO.read(new File(".\\images\\talkIcon.gif"));
+			answer = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"talkIcon.gif"));
 			Graphics g = answer.getGraphics();
 			g.setColor(Color.RED);
 			g.drawLine(13, 14, 13, 14);

@@ -19,7 +19,7 @@ public class CookieShop extends ConcreteDrawableObject implements
 	private IDrawableObject window2 = new ShopWindow();
 	
 	public CookieShop(){
-		setSpriteFile(".\\images\\penn2\\cookieshop.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\cookieshop.bmp");
 		addContainedObject(sign);
 		addContainedObject(door);
 		addContainedObject(window1);

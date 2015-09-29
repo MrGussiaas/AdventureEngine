@@ -23,7 +23,7 @@ public class Cop1LoveImageRegistry implements IImageRegistry{
 	
 	private Cop1LoveImageRegistry(){
 		try {
-			images.add(ImageIO.read(new File(".\\images\\penn1\\cop1a_lover.bmp")));
+			images.add(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"penn1\\cop1a_lover.bmp")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

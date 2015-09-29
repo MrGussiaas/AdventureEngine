@@ -14,7 +14,7 @@ public class NinteenthStreet extends ConcreteRoom {
 	public NinteenthStreet(){
 		setId(7);
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\nineteenth1\\nineteenth1.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth1\\nineteenth1.bmp");
 		IBarrierObject eastBarrier = new BarrierObject();
 		eastBarrier.setX(0);
 		eastBarrier.setY(0);

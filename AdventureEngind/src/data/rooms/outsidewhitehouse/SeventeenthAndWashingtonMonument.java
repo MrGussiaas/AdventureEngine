@@ -16,7 +16,7 @@ public class SeventeenthAndWashingtonMonument extends ConcreteRoom {
 		setId(5);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\seventeenthandmonument.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\seventeenthandmonument.bmp");
 		addObject(background);
 		
 		IBarrierObject westBarrier = new BarrierObject();

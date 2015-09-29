@@ -96,9 +96,9 @@ public class AchmereInterior extends ConcreteRoom {
 		
 		
 		
-		desk.setSpriteFile(".\\images\\achmereinterior\\achmeresdesk.bmp");
-		aisle1.setSpriteFile(".\\images\\achmereinterior\\aisle1.bmp");
-		aisle2.setSpriteFile(".\\images\\achmereinterior\\aisle1.bmp");
+		desk.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmeresdesk.bmp");
+		aisle1.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\aisle1.bmp");
+		aisle2.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\aisle1.bmp");
 		
 		desk.setX(484);
 		desk.setY(130);
@@ -116,7 +116,7 @@ public class AchmereInterior extends ConcreteRoom {
 		achmere.setY(300);
 		achmere.setInternalState(IGameObject.InternalObjectStates.DEFAULT_STATE);
 		
-		background.setSpriteFile(".\\images\\achmereinterior\\achmierinterior.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmierinterior.bmp");
 		
 		
 		IBarrierObject westBarrier = new BarrierObject();

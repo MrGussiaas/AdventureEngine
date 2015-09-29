@@ -33,20 +33,20 @@ public class FireCrackerImageMaker {
 		List<Image> explodeImages = new ArrayList<Image>(10);
 		IImagePolicy policy = new TransparencyPolicy(0xFFFA45EC);
 		try {
-			BufferedImage bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\firecrackerunlimit.bmp")));
+			BufferedImage bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\firecrackerunlimit.bmp")));
 			defaultImages.add(bufImage);
 			imageMakers.put(IGameObject.InternalObjectStates.DEFAULT_STATE, defaultImages);
 			
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\firecrackerlimit1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\firecrackerlimit1.bmp")));
 			litImages.add(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\firecrackerlimit2.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\firecrackerlimit2.bmp")));
 			litImages.add(bufImage);
 			
 			imageMakers.put(IGameObject.InternalObjectStates.LIT, litImages);
 			
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\firecrackerexplode1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\firecrackerexplode1.bmp")));
 			explodeImages.add(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\firecrackerexplode2.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\firecrackerexplode2.bmp")));
 			explodeImages.add(bufImage);
 			
 			imageMakers.put(IGameObject.InternalObjectStates.EXPLODE, explodeImages);

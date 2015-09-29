@@ -30,49 +30,49 @@ public class Boy1ImageMaker {
 		IImageMaker walkImageMaker = new ImageMaker();
 		IImagePolicy policy = new TransparencyPolicy(0xFFFA45EC);
 		try {
-			BufferedImage bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidkneel1.bmp")));
+			BufferedImage bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidkneel1.bmp")));
 			defaultImageMaker.addDxNegImage(bufImage);
 			defaultImageMaker.addDxPosImage(bufImage);
 			defaultImageMaker.addDyNegImage(bufImage);
 			defaultImageMaker.addDyPosImage(bufImage);
 			imageMakers.put(IGameObject.InternalObjectStates.DEFAULT_STATE, defaultImageMaker);
 			
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft1.bmp")));
 			walkImageMaker.addDxNegImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft2.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft2.bmp")));
 			walkImageMaker.addDxNegImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft1.bmp")));
 			walkImageMaker.addDxNegImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft3.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft3.bmp")));
 			walkImageMaker.addDxNegImage(bufImage);
 			
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen1.bmp")));
 			walkImageMaker.addDxPosImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen2.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen2.bmp")));
 			walkImageMaker.addDxPosImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen1.bmp")));
 			walkImageMaker.addDxPosImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen3.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen3.bmp")));
 			walkImageMaker.addDxPosImage(bufImage);
 			
 /////////////
 			
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft1.bmp")));
 			walkImageMaker.addDyNegImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft2.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft2.bmp")));
 			walkImageMaker.addDyNegImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft1.bmp")));
 			walkImageMaker.addDyNegImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidleft3.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidleft3.bmp")));
 			walkImageMaker.addDyNegImage(bufImage);
 			
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen1.bmp")));
 			walkImageMaker.addDyPosImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen2.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen2.bmp")));
 			walkImageMaker.addDyPosImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen1.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen1.bmp")));
 			walkImageMaker.addDyPosImage(bufImage);
-			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\backally\\kidrightgreen3.bmp")));
+			bufImage = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"backally\\kidrightgreen3.bmp")));
 			walkImageMaker.addDyPosImage(bufImage);
 			imageMakers.put(IGameObject.InternalObjectStates.WALKING_STATE, walkImageMaker);
 			

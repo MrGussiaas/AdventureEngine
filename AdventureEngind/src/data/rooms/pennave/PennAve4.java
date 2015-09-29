@@ -15,7 +15,7 @@ public class PennAve4 extends ConcreteRoom {
 	public PennAve4(){
 		setId(10);
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\penn4\\pennave4.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn4\\pennave4.bmp");
 		addObject(background);
 		
 		IBarrierObject southBarrier = new BarrierObject();

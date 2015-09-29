@@ -22,7 +22,7 @@ public class OnComingTraffic extends ConcreteRoom {
 		roadSign.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 		addObject(roadSign);
 		
-		background.setSpriteFile(".\\images\\traffic\\on_coming_traffic.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"traffic\\on_coming_traffic.bmp");
 		addObject(background);
 		
 		setId(4);

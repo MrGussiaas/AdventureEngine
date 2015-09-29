@@ -11,7 +11,7 @@ public class BeerCooler extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public BeerCooler(){
-		super.setSpriteFile(".\\images\\achmereInterior\\beerCooler.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereInterior\\beerCooler.bmp");
 		super.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 	}
 	

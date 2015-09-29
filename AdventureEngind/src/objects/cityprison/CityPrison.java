@@ -22,7 +22,7 @@ public class CityPrison extends ConcreteDrawableObject {
 		prisonWindow.setX(125);
 		prisonWindow.setY(75);
 		prisonDoor.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
-		setSpriteFile(".\\images\\cityprison\\prisonExterior.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison\\prisonExterior.bmp");
 
 		
 	}

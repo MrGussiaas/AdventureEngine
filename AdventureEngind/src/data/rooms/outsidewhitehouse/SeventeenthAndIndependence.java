@@ -15,7 +15,7 @@ public class SeventeenthAndIndependence extends ConcreteRoom {
 		setId(6);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\seventeenthandindependence.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\seventeenthandindependence.bmp");
 		addObject(background);
 		
 		IBarrierObject westBarrier = new BarrierObject();

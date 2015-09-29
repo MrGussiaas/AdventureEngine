@@ -27,8 +27,8 @@ public class AchmeresDoorImageRegistry {
 	
 	private AchmeresDoorImageRegistry(){
 		try {
-			imageMap.put(IGameObject.InternalObjectStates.CLOSED, ImageIO.read(new File(".\\images\\nineteenth2\\achmeresdoorClosed.bmp")));
-			imageMap.put(IGameObject.InternalObjectStates.OPEN, ImageIO.read(new File(".\\images\\nineteenth2\\achmeresdoorOpen.bmp")));
+			imageMap.put(IGameObject.InternalObjectStates.CLOSED, ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresdoorClosed.bmp")));
+			imageMap.put(IGameObject.InternalObjectStates.OPEN, ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresdoorOpen.bmp")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

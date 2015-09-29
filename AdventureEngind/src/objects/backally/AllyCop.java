@@ -6,6 +6,6 @@ import renderingpolicies.TransparencyPolicy;
 public class AllyCop extends ConcreteDrawableObject {
 	public AllyCop(){
 		super.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
-		super.setSpriteFile(".\\images\\backally\\cop.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally\\cop.bmp");
 	}
 }

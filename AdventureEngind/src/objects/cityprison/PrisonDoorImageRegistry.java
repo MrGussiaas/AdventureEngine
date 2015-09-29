@@ -32,9 +32,9 @@ public class PrisonDoorImageRegistry {
 	private PrisonDoorImageRegistry(){
 		try {
 			IImagePolicy transparency = new TransparencyPolicy(0xFFFA45EC);
-			BufferedImage closed = (BufferedImage) transparency.renderImage(ImageIO.read(new File(".\\images\\cityprison\\prisondoorClosed.bmp")));
+			BufferedImage closed = (BufferedImage) transparency.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"cityprison\\prisondoorClosed.bmp")));
 			imageMap.put(IGameObject.InternalObjectStates.CLOSED, closed);
-			BufferedImage open = (BufferedImage) transparency.renderImage(ImageIO.read(new File(".\\images\\cityprison\\prisondoorOpen.bmp")));
+			BufferedImage open = (BufferedImage) transparency.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"cityprison\\prisondoorOpen.bmp")));
 			imageMap.put(IGameObject.InternalObjectStates.OPEN, open);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

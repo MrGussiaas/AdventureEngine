@@ -16,7 +16,7 @@ public class FifteenthAndEastStreet extends ConcreteRoom {
 		setId(21);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\fifteenthandeast.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\fifteenthandeast.bmp");
 		addObject(background);
 		
 		IBarrierObject northBarrier = new BarrierObject();

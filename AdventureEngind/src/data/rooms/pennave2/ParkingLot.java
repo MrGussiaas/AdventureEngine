@@ -9,7 +9,7 @@ public class ParkingLot extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public ParkingLot(){
-		setSpriteFile(".\\images\\penn2\\parkinglot.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\parkinglot.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

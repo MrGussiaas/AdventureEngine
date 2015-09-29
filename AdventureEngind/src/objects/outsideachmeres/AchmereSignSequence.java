@@ -26,8 +26,8 @@ public class AchmereSignSequence {
 	private AchmereSignSequence(){
 
 		try {
-			signOn = ImageIO.read(new File(".\\images\\nineteenth2\\achmeresSign1.bmp"));
-			signOff = ImageIO.read(new File(".\\images\\nineteenth2\\achmeresSign2.bmp"));
+			signOn = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresSign1.bmp"));
+			signOff = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresSign2.bmp"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -11,7 +11,7 @@ public class PrisonDoorEntrance extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public PrisonDoorEntrance(){
-		super.setSpriteFile(".\\images\\PrisonInterior\\doorentrance.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior\\doorentrance.bmp");
 		IImagePolicy transparency = new TransparencyPolicy(0xFFFA45EC);
 		super.addImagePolicy(transparency);
 		setInternalState(IGameObject.InternalObjectStates.CLOSED);

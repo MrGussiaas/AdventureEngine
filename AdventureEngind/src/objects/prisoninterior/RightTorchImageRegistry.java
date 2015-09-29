@@ -29,8 +29,8 @@ public class RightTorchImageRegistry implements IImageRegistry {
 	private RightTorchImageRegistry(){
 		IImagePolicy transparency = new TransparencyPolicy(0xFFFA45EC);
 		try {
-			image1 = transparency.renderImage(ImageIO.read(new File(".\\images\\PrisonInterior\\torchright1.bmp")));
-			image2 = transparency.renderImage(ImageIO.read(new File(".\\images\\PrisonInterior\\torchright2.bmp")));
+			image1 = transparency.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior\\torchright1.bmp")));
+			image2 = transparency.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior\\torchright2.bmp")));
 			imageCycles.add(image1);
 			imageCycles.add(image1);
 			imageCycles.add(image1);

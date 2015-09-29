@@ -71,7 +71,7 @@ public class OutsidePrison extends ConcreteRoom {
 		IBarrierObject EastBarrier = new BarrierObject();
 		IBarrierObject WestBarrier = new BarrierObject();
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\prison\\city_prison.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prison\\city_prison.bmp");
 		
 		SouthBarrier.setX(0);
 		SouthBarrier.setY(ScreenSettings.getInstance().getResHeight() - 10);

@@ -18,8 +18,8 @@ public class LookIcon extends ConcreteDrawableObject implements IInterfaceableOb
 
 	public LookIcon(){
 		try {
-			upStateImage = ImageIO.read(new File(".\\images\\lookIcon.bmp"));
-			downStateImage = ImageIO.read(new File(".\\images\\lookIconUp.bmp"));
+			upStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"lookIcon.bmp"));
+			downStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"lookIconUp.bmp"));
 			bufImage = upStateImage;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -8,7 +8,7 @@ import scripts.IScriptableObject;
 public class CopCar extends ConcreteDrawableObject implements IScriptableObject {
 
 	public CopCar(){
-		setSpriteFile(".\\images\\prison\\copcar.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prison\\copcar.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

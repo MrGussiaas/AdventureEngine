@@ -11,7 +11,7 @@ public class WineCooler extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public WineCooler(){
-		super.setSpriteFile(".\\images\\achmereInterior\\wineCooler.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereInterior\\wineCooler.bmp");
 		super.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 	}
 	

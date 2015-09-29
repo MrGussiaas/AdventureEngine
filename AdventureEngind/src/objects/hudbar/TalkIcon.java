@@ -18,8 +18,8 @@ public class TalkIcon extends ConcreteDrawableObject implements IInterfaceableOb
 	
 	public TalkIcon(){
 		try {
-			upStateImage = ImageIO.read(new File(".\\images\\talkIcon.bmp"));
-			downStateImage = ImageIO.read(new File(".\\images\\talkIconUp.bmp"));
+			upStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"talkIcon.bmp"));
+			downStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"talkIconUp.bmp"));
 			bufImage = upStateImage;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

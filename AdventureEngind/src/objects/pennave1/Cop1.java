@@ -48,7 +48,7 @@ public class Cop1 extends ConcreteDrawableObject implements IScriptableObject{
 	public IScriptRunner getActionScript() {
 		IScriptRunner actionScript = new ConcreteScriptRunner();
 		IDrawableObject redHeart = new ConcreteMoveableObject();
-		redHeart.setSpriteFile(".\\images\\penn1\\redHeart.bmp");
+		redHeart.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn1\\redHeart.bmp");
 		redHeart.setX(360);
 		redHeart.setY(180);
 		

@@ -16,7 +16,7 @@ public class WashingtonMonument extends ConcreteRoom {
 		setId(16);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\washingtonmonument.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\washingtonmonument.bmp");
 		addObject(background);
 		
 		ITrigger southWarp = new BottomRoomTrigger(ScreenSettings.getInstance().getResWide() / 2, 100);

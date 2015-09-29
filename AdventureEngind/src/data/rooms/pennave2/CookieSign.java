@@ -9,7 +9,7 @@ public class CookieSign extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public CookieSign(){
-		setSpriteFile(".\\images\\penn2\\cookiesign.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\cookiesign.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

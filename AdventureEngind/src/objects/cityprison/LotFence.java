@@ -9,7 +9,7 @@ public class LotFence extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public LotFence(){
-		setSpriteFile(".\\images\\prison\\lotfence.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prison\\lotfence.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

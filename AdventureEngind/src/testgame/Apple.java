@@ -20,7 +20,7 @@ import scripts.gamescripts.WalkToScript;
 public class Apple extends ConcreteDrawableObject implements IScriptableObject {
 	
 	public Apple(){
-		super.setSpriteFile(".\\images\\apple.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"apple.bmp");
 		
 
 	}

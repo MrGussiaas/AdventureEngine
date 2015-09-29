@@ -20,8 +20,8 @@ public class ScrollDownBtn extends CommandButton implements IScrollButton{
 	private List<IScrollBarListener> handlers = new ArrayList<IScrollBarListener>(10);
 	public ScrollDownBtn(){
 		try {
-			upImage = ImageIO.read(new File(".\\images\\scrolldownbtn_up.bmp"));
-			downImage = ImageIO.read(new File(".\\images\\scrolldownbtn_down.bmp"));
+			upImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"scrolldownbtn_up.bmp"));
+			downImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"scrolldownbtn_down.bmp"));
 			setWidth(upImage.getWidth());
 			setHeight(upImage.getHeight());
 		} catch (IOException e) {

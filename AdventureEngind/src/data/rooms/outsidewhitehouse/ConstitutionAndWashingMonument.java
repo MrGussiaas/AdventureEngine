@@ -17,7 +17,7 @@ public class ConstitutionAndWashingMonument extends ConcreteRoom {
 		setId(15);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\constitutionandwashingtonmonument.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\constitutionandwashingtonmonument.bmp");
 		addObject(background);
 		
 		IBarrierObject northBarrier = new BarrierObject();

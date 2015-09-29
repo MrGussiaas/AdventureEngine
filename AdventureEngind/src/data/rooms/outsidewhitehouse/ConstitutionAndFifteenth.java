@@ -17,7 +17,7 @@ public class ConstitutionAndFifteenth extends ConcreteRoom {
 		setId(19);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\fifteenthandconstitution.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\fifteenthandconstitution.bmp");
 		addObject(background);
 		
 		IBarrierObject eastBarrier = new BarrierObject();

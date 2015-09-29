@@ -12,7 +12,7 @@ import objects.IGameObject.InternalObjectStates;
 
 public class JerkyTruck extends ConcreteDrawableObject {
 	public JerkyTruck(){
-		super.setSpriteFile(".\\images\\jerkytruck.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"jerkytruck.bmp");
 		super.setInternalState(InternalObjectStates.WALKING_STATE);
 	}
 

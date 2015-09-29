@@ -20,8 +20,8 @@ public class ScrollUpBtn extends CommandButton implements IScrollButton{
 	private boolean clicked;
 	public ScrollUpBtn(){
 		try {
-			upImage = ImageIO.read(new File(".\\images\\scrollupbtn_up.bmp"));
-			downImage = ImageIO.read(new File(".\\images\\scrollupbtn_down.bmp"));
+			upImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"scrollupbtn_up.bmp"));
+			downImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"scrollupbtn_down.bmp"));
 			setWidth(upImage.getWidth());
 			setHeight(upImage.getHeight());
 		} catch (IOException e) {

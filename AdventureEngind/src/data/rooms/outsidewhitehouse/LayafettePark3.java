@@ -16,7 +16,7 @@ public class LayafettePark3 extends ConcreteRoom {
 		setId(22);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\layafettepark3.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\layafettepark3.bmp");
 		addObject(background);
 		
 		IBarrierObject northBarrier = new BarrierObject();

@@ -28,8 +28,8 @@ public class CommandButton extends ConcreteDrawableObject implements IInterfacea
 	public CommandButton(String text){
 		this.buttonText = text;
 		try {
-			upBackground = ImageIO.read(new File(".\\images\\commandButtonUp.bmp"));
-			downImage = ImageIO.read(new File(".\\images\\commandButtonDown.bmp"));
+			upBackground = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"commandButtonUp.bmp"));
+			downImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"commandButtonDown.bmp"));
 			setWidth(upBackground.getWidth());
 			setHeight(upBackground.getHeight());
 		} catch (IOException e) {

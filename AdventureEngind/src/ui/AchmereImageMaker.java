@@ -29,10 +29,10 @@ public class AchmereImageMaker {
 		
 		BufferedImage image1;
 		try {
-			image1 = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\achmereinterior\\achmereNormal.bmp")));
-			BufferedImage whistle1 = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\achmereinterior\\achmereWhistle1.bmp")));
-			BufferedImage whistle2 = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\achmereinterior\\achmereWhistle2.bmp")));
-			BufferedImage whistle3 = (BufferedImage) policy.renderImage(ImageIO.read(new File(".\\images\\achmereinterior\\achmereWhistle3.bmp")));
+			image1 = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmereNormal.bmp")));
+			BufferedImage whistle1 = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmereWhistle1.bmp")));
+			BufferedImage whistle2 = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmereWhistle2.bmp")));
+			BufferedImage whistle3 = (BufferedImage) policy.renderImage(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmereWhistle3.bmp")));
 			
 			defaultImageMaker.addDxNegImage(image1);
 			defaultImageMaker.addDxNegImage(image1);

@@ -21,8 +21,8 @@ public class InventoryIcon extends ConcreteDrawableObject implements IInterfacea
 	
 	public InventoryIcon(){
 		try {
-			upStateImage = ImageIO.read(new File(".\\images\\inventoryIcon.bmp"));
-			downStateImage = ImageIO.read(new File(".\\images\\inventoryIconUp.bmp"));
+			upStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"inventoryIcon.bmp"));
+			downStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"inventoryIconUp.bmp"));
 			currentImage = upStateImage;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

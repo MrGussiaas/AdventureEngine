@@ -16,7 +16,7 @@ public class PennAve3 extends ConcreteRoom {
 		setId(6);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\penn3\\penn_ave_3.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn3\\penn_ave_3.bmp");
 		IBarrierObject bottomBarrier = new BarrierObject();
 		bottomBarrier.setX(0);
 		bottomBarrier.setY(ScreenSettings.getInstance().getResHeight() - 10);

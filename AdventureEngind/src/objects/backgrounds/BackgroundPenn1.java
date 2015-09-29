@@ -5,6 +5,6 @@ import objects.ConcreteDrawableObject;
 
 public class BackgroundPenn1 extends BackgroundObject {
 	public BackgroundPenn1(){
-		super.setSpriteFile(".\\images\\pennAve1.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"pennAve1.bmp");
 	}
 }

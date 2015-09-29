@@ -18,7 +18,7 @@ public class SouthPlNW extends ConcreteRoom {
 		setId(10);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\southplnw.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\southplnw.bmp");
 		addObject(background);
 		
 		IBarrierObject southBarrier = new BarrierObject();

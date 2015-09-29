@@ -8,7 +8,7 @@ import scripts.IScriptableObject;
 public class ShopWindow extends ConcreteDrawableObject implements IScriptableObject{
 
 	public ShopWindow(){
-		super.setSpriteFile(".\\images\\penn2\\window.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\window.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

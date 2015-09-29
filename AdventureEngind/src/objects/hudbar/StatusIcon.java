@@ -17,8 +17,8 @@ public class StatusIcon extends ConcreteDrawableObject implements IInterfaceable
 	private BufferedImage downStateImage;
 	public StatusIcon(){
 		try {
-			upStateImage = ImageIO.read(new File(".\\images\\statusIcon.bmp"));
-			downStateImage = ImageIO.read(new File(".\\images\\statusIconUp.bmp"));
+			upStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"statusIcon.bmp"));
+			downStateImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"statusIconUp.bmp"));
 			bufImage = upStateImage;
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

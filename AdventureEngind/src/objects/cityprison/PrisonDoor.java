@@ -24,7 +24,7 @@ public class PrisonDoor extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public PrisonDoor(){
-		super.setSpriteFile(".\\images\\cityprison\\prisonDoorClosed.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison\\prisonDoorClosed.bmp");
 		setInternalState(IGameObject.InternalObjectStates.CLOSED);
 	}
 	public IScriptRunner getActionScript() {

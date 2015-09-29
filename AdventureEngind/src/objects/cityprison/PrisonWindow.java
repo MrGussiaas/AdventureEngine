@@ -9,7 +9,7 @@ public class PrisonWindow extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public PrisonWindow(){
-		super.setSpriteFile(".\\images\\cityprison\\jailbars.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison\\jailbars.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

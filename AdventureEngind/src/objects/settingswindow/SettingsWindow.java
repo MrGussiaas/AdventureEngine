@@ -40,7 +40,7 @@ public class SettingsWindow extends ConcreteDrawableObject implements IInterface
 
 
 		try {
-			backgroundImage = ImageIO.read(new File(".\\images\\StatusWindowBackground.bmp"));
+			backgroundImage = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"StatusWindowBackground.bmp"));
 			int yOffset = 10;
 			
 			saveBtn.setX(10);

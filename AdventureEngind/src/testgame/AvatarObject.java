@@ -44,7 +44,7 @@ public class AvatarObject extends ConcreteDrawableObject {
 
 
 	public AvatarObject(){
-		super.setSpriteFile(".\\images\\avatardown1.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"avatardown1.bmp");
 		super.setInternalState(IGameObject.InternalObjectStates.DEFAULT_STATE);	
 
 		

@@ -13,7 +13,7 @@ public class OutsideBar extends ConcreteRoom {
 	public OutsideBar(){
 		setId(11);
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\eighteenth\\eighteenth.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"eighteenth\\eighteenth.bmp");
 		
 		IBarrierObject northBarrier = new BarrierObject();
 		IBarrierObject eastBarrier = new BarrierObject();

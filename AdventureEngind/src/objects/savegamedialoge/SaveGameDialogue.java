@@ -55,7 +55,7 @@ public class SaveGameDialogue extends ConcreteDrawableObject implements IInterfa
 
 	private SaveGameDialogue(){
 		try {
-			background = ImageIO.read(new File(".\\images\\StatusWindowBackground.bmp"));
+			background = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"StatusWindowBackground.bmp"));
 			setWidth(background.getWidth());
 			setHeight(background.getHeight());
 			Point center = ScreenConverterUtils.computeCenter(ScreenSettings.getInstance(), this);

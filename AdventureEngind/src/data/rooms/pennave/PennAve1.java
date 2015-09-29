@@ -26,7 +26,7 @@ public class PennAve1 extends ConcreteRoom {
 	public PennAve1(){
 		setId(1);
 		IDrawableObject bgObject = new BackgroundObject();
-		bgObject.setSpriteFile(".\\images\\pennAve1.bmp");
+		bgObject.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"pennAve1.bmp");
 		IGameObject blueBuilding = new Building1();
 		blueBuilding.setX(10);
 		blueBuilding.setY(0);

@@ -15,7 +15,7 @@ public class WhiteHouseAlly extends ConcreteRoom {
 		setId(11);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\whitehouseally.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\whitehouseally.bmp");
 		addObject(background);
 		
 		IBarrierObject northBarrier = new BarrierObject();

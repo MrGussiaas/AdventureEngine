@@ -26,7 +26,7 @@ public class ActionCursorFactory implements ICursorFactory {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		BufferedImage answer;
 		try {
-			answer = ImageIO.read(new File(".\\images\\actionIcon.gif"));
+			answer = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"actionIcon.gif"));
 			Graphics g = answer.getGraphics();
 			g.setColor(Color.RED);
 			g.drawLine(4, 2, 4, 2);

@@ -22,7 +22,7 @@ public class AchmereSign extends ConcreteDrawableObject {
 	private int cyclecount;
 	
 	public AchmereSign(){
-		setSpriteFile(".\\images\\nineteenth2\\achmeresSign1.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresSign1.bmp");
 	}
 
 	@Override

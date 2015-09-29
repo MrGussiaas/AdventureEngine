@@ -4,6 +4,6 @@ import objects.ConcreteDrawableObject;
 
 public class TrafficSign extends ConcreteDrawableObject {
 	public TrafficSign(){
-		super.setSpriteFile(".\\images\\traffic\\roadSign.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"traffic\\roadSign.bmp");
 	}
 }

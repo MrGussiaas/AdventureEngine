@@ -16,7 +16,7 @@ public class LayafettePark2 extends ConcreteRoom {
 		setId(13);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\layafettepar2.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\layafettepar2.bmp");
 		addObject(background);
 		
 		ITrigger southWarp = new BottomRoomTrigger(ScreenSettings.getInstance().getResWide() / 2, 100);

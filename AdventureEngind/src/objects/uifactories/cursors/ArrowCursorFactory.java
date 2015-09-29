@@ -20,7 +20,7 @@ public class ArrowCursorFactory implements ICursorFactory {
 	
 	public ArrowCursorFactory(){
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		Image arrowCursorImage = toolkit.getImage(".\\images\\arrowIcon.gif");
+		Image arrowCursorImage = toolkit.getImage(globalvariables.constants.IMAGE_LOCATION+"arrowIcon.gif");
 		cursor = toolkit.createCustomCursor(arrowCursorImage, new Point(0, 0), "test");
 	}
 	

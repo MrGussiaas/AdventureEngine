@@ -15,7 +15,7 @@ public class AchmeresBuilding extends ConcreteDrawableObject {
 	private IDrawableObject door = new AchmeresDoor();
 	private IDrawableObject sign = new AchmereSign();
 	public AchmeresBuilding(){
-		setSpriteFile(".\\images\\nineteenth2\\achmeresBuilding.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresBuilding.bmp");
 		sign.setX(225);
 		sign.setY(22);
 		door.setX(245);

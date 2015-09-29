@@ -26,7 +26,7 @@ public class LookCursorFactory implements ICursorFactory {
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
 		BufferedImage answer;
 		try {
-			answer = ImageIO.read(new File(".\\images\\lookIcon.gif"));
+			answer = ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"lookIcon.gif"));
 			Graphics g = answer.getGraphics();
 			g.setColor(Color.RED);
 			g.drawLine(7, 6, 7, 6);

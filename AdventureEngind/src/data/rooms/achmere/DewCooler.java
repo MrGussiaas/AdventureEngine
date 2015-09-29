@@ -11,7 +11,7 @@ public class DewCooler extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public DewCooler(){
-		super.setSpriteFile(".\\images\\achmereInterior\\dewCooler.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereInterior\\dewCooler.bmp");
 		super.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 	}
 	

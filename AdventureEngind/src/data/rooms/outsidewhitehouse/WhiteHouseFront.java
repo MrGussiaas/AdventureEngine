@@ -16,7 +16,7 @@ public class WhiteHouseFront extends ConcreteRoom {
 		setId(12);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(".\\images\\whitehouse\\whitehousefront.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\whitehousefront.bmp");
 		addObject(background);
 		
 		IBarrierObject northBarrier = new BarrierObject();

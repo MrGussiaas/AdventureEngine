@@ -23,10 +23,10 @@ public class ChangeCursorCommand implements IOCommand {
 	
 	public ChangeCursorCommand(){
 		Toolkit toolkit = Toolkit.getDefaultToolkit();
-		Image walkCursorImage = toolkit.getImage(".\\images\\walkIcon.gif");
-		Image lookCursorImage = toolkit.getImage(".\\images\\lookIcon.gif");
-		Image talkCursorImage = toolkit.getImage(".\\images\\talkIcon.gif");
-		Image actionCursorImage = toolkit.getImage(".\\images\\actionIcon.gif");
+		Image walkCursorImage = toolkit.getImage(globalvariables.constants.IMAGE_LOCATION+"walkIcon.gif");
+		Image lookCursorImage = toolkit.getImage(globalvariables.constants.IMAGE_LOCATION+"lookIcon.gif");
+		Image talkCursorImage = toolkit.getImage(globalvariables.constants.IMAGE_LOCATION+"talkIcon.gif");
+		Image actionCursorImage = toolkit.getImage(globalvariables.constants.IMAGE_LOCATION+"actionIcon.gif");
 		
 		
 		Cursor walkCursor = toolkit.createCustomCursor(walkCursorImage, new Point(0, 0), "test");
