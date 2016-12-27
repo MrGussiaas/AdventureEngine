@@ -1,5 +1,7 @@
 package data.rooms.pennave2;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import scripts.IScriptRunner;
@@ -9,7 +11,7 @@ public class CookieSign extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public CookieSign(){
-		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\cookiesign.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2"+File.separatorChar+"cookiesign.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

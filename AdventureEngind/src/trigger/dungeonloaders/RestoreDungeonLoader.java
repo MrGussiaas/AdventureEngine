@@ -1,5 +1,6 @@
 package trigger.dungeonloaders;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -24,7 +25,7 @@ public class RestoreDungeonLoader extends NewDungeonLoader {
 
 		try {
 
-			ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(".\\savedgames\\"+selectedGame));
+			ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("."+File.separatorChar+"savedgames"+File.separatorChar+""+selectedGame));
 			newDungeon = (IDungeon) inputStream.readObject();
 
 

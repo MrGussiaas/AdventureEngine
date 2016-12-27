@@ -13,7 +13,7 @@ public class ConcreteRoom implements IRoom {
 
 	@Override
 	public int hashCode() {
-		final int prime = 31;
+		final int prime = 32;
 		int result = 1;
 		result = prime * result + id;
 		return result;

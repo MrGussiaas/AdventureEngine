@@ -2,6 +2,7 @@ package data.rooms.pennave2;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 
 import objects.ConcreteDrawableObject;
 import objects.IDrawableObject;
@@ -17,7 +18,7 @@ public class LaundaryShop extends ConcreteDrawableObject implements
 	private IDrawableObject window2 = new ShopWindow();
 	private IDrawableObject sign = new LaunderySign();
 	public LaundaryShop(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\laundaryBuilding.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2"+File.separatorChar+"laundaryBuilding.bmp");
 		addContainedObject(door);
 		addContainedObject(window1);
 		addContainedObject(window2);
@@ -65,6 +66,7 @@ public class LaundaryShop extends ConcreteDrawableObject implements
 		int parentX = (int)getX();
 		int parentY = (int)getY();
 		for(int i = 0, n = getContainedObjectsCount(); i < n; i++){
+			
 			IDrawableObject containedObject = (IDrawableObject) getContainedObject(i);
 			
 			

@@ -1,5 +1,7 @@
 package data.rooms.outsidewhitehouse;
 
+import java.io.File;
+
 import objects.BackgroundObject;
 import objects.BarrierObject;
 import objects.IBarrierObject;
@@ -17,7 +19,7 @@ public class SeventeenthAndSouthPlazaNorthWest extends ConcreteRoom {
 		setId(2);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\seventeenthandeastnorthwest.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse"+File.separatorChar+"seventeenthandeastnorthwest.bmp");
 		addObject(background);
 		
 		ITrigger northWarp = new TopRoomTrigger(ScreenSettings.getInstance().getResWide() / 2, ScreenSettings.getInstance().getResHeight() - 100);

@@ -2,6 +2,7 @@ package testgame;
 
 import io.ConcreteIOHandler;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -23,7 +24,7 @@ public class StartLoad {
 		IGameModel testModel = null;
 		
 		try {
-			IRoom room = saver.loadRoom(".\\rooms\\room2.rom");
+			IRoom room = saver.loadRoom("."+File.separatorChar+"rooms"+File.separatorChar+"room2.rom");
 			testModel = ModelConverter.getInstance().convertRoomToModel(room);
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

@@ -1,5 +1,7 @@
 package data.rooms.pennave;
 
+import java.io.File;
+
 import objects.BackgroundObject;
 import objects.BarrierObject;
 import objects.ConcreteDrawableObject;
@@ -34,10 +36,10 @@ public class BackAlly extends ConcreteRoom {
 		boy1.setInternalState(IGameObject.InternalObjectStates.DEFAULT_STATE);
 		boy2.setInternalState(IGameObject.InternalObjectStates.DEFAULT_STATE);
 		fireCracker.setInternalState(IGameObject.InternalObjectStates.DEFAULT_STATE);
-		boy1.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally\\kidkneel1.bmp");
-		boy2.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally\\kidright1.bmp");
+		boy1.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally"+File.separatorChar+"kidkneel1.bmp");
+		boy2.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally"+File.separatorChar+"kidright1.bmp");
 		
-		fireCracker.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally\\firecrackerunlimit.bmp");
+		fireCracker.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally"+File.separatorChar+"firecrackerunlimit.bmp");
 		fireCracker.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 		boy1.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 		boy2.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
@@ -49,12 +51,12 @@ public class BackAlly extends ConcreteRoom {
 		boy2.setY(225);
 		
 		
-		eastWall.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally\\eastWall.bmp");
+		eastWall.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally"+File.separatorChar+"eastWall.bmp");
 		eastWall.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 		eastWall.setX(ScreenSettings.getInstance().getResWide() - 107);
 		eastWall.setY(ScreenSettings.getInstance().getResHeight() - 313);
 		
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally\\back_ally.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"backally"+File.separatorChar+"back_ally.bmp");
 		
 		NorthBarrier.setX(0);
 		NorthBarrier.setY(160);

@@ -17,7 +17,7 @@ public class SaveGameDialogFactory implements IUIFactory {
 		for(int i = 0, n = listBox.getItemCount(); i < n; i++){
 			listBox.removeItem(0);
 		}
-		File f = new File(".\\savedgames");
+		File f = new File("."+File.separatorChar+"savedgames");
 		String[] files = f.list();
 		for(int i = 0, n = files.length; i < n; i++){
 			listBox.addItem(files[i]);

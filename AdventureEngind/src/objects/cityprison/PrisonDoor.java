@@ -4,6 +4,7 @@ import io.TriggerEvent;
 
 import java.awt.Image;
 import java.awt.Point;
+import java.io.File;
 
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
@@ -24,7 +25,7 @@ public class PrisonDoor extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public PrisonDoor(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison\\prisonDoorClosed.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison"+File.separatorChar+"prisonDoorClosed.bmp");
 		setInternalState(IGameObject.InternalObjectStates.CLOSED);
 	}
 	public IScriptRunner getActionScript() {
@@ -34,7 +35,7 @@ public class PrisonDoor extends ConcreteDrawableObject implements
 		actionRunner.addScript(new InitWayPointScript(new Point(300, 245)));
 		actionRunner.addScript(walkToScript);
 		actionRunner.addScript(new SetObjectInternalStateScript(IGameObject.InternalObjectStates.OPEN, this));
-		actionRunner.addScript(new AddNewTriggerEventToQueueScript(new TriggerEvent(new DungeonRoomTrigger(".\\rooms\\prisoninterior.dgn", new Point(50, 200), 1))));
+		actionRunner.addScript(new AddNewTriggerEventToQueueScript(new TriggerEvent(new DungeonRoomTrigger("."+File.separatorChar+"rooms"+File.separatorChar+"prisoninterior.dgn", new Point(50, 200), 1))));
 		
 		return actionRunner;
 	}

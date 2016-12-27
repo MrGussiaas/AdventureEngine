@@ -43,7 +43,7 @@ public class SaveGameProcessor implements IDungeonProcessor {
 		try {
 			
 			SaveGameDialogue dialogue = (SaveGameDialogue) SaveGameDialogue.getInstance();
-			File f = new File(".\\savedgames\\"+dialogue.getValue().toString());
+			File f = new File("."+File.separatorChar+"savedgames"+File.separatorChar+""+dialogue.getValue().toString());
 			if(!f.exists()){
 				f.createNewFile();
 			}

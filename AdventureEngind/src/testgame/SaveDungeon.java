@@ -1,10 +1,10 @@
 package testgame;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
-
 
 import data.ConcreteDungeon;
 import data.IDungeon;
@@ -68,7 +68,7 @@ public class SaveDungeon {
 		
 		prisonInterior.setCurrentRoom(interior1);
 		
-		String fileName = ".\\rooms\\prisoninterior.dgn";
+		String fileName = "."+File.separatorChar+"rooms"+File.separatorChar+"prisoninterior.dgn";
 		prisonInterior.setFileName(fileName);
 		ObjectOutputStream outputStream;
 		try {
@@ -244,7 +244,7 @@ public class SaveDungeon {
 		dungeon.setCurrentRoom(pennAndSeventeenth);
 		dungeon.setInitialRoom(pennAndSeventeenth);
 		
-		String fileName = ".\\rooms\\whitehouseexterior.dgn";
+		String fileName = "."+File.separatorChar+"rooms"+File.separatorChar+"whitehouseexterior.dgn";
 		dungeon.setFileName(fileName);
 		ObjectOutputStream outputStream;
 		try {
@@ -266,7 +266,7 @@ public class SaveDungeon {
 		dungeon.addRoom(achmere1);
 		dungeon.setCurrentRoom(achmere1);
 		dungeon.setInitialRoom(achmere1);
-		String fileName = ".\\rooms\\achmere.dgn";
+		String fileName = "."+File.separatorChar+"rooms"+File.separatorChar+"achmere.dgn";
 		dungeon.setFileName(fileName);
 		ObjectOutputStream outputStream;
 		try {
@@ -342,7 +342,7 @@ public class SaveDungeon {
 		dungeon.setLeftMapping(penn5, penn4);
 		
 		ObjectOutputStream outputStream;
-		String fileName = ".\\rooms\\testdungeon.dgn";
+		String fileName = "."+File.separatorChar+"rooms"+File.separatorChar+"testdungeon.dgn";
 		dungeon.setFileName(fileName);
 		try {
 			

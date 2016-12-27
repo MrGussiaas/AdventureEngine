@@ -4,6 +4,7 @@ import io.ConcreteIOHandler;
 
 import java.awt.Color;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -15,13 +16,11 @@ import data.IRoom;
 import data.IRoomSaverLoader;
 import data.ModelConverter;
 import data.RoomSaver;
-
 import objects.BarrierObject;
 import objects.CommandHandler;
 import objects.IBarrierObject;
 import objects.IGameObject;
 import objects.TestLines;
-
 import ui.ConcreteGameModel;
 import ui.ConcreteUIController;
 import ui.ConcreteView;
@@ -79,7 +78,7 @@ public class Start {
 		IRoom room = ModelConverter.getInstance().convertModelToRoom(testModel);
 		IRoomSaverLoader saver = new RoomSaver();
 		try {
-			saver.saveRoom(room, ".\\rooms\\room2.rom");
+			saver.saveRoom(room, "."+File.separatorChar+"rooms"+File.separatorChar+"room2.rom");
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

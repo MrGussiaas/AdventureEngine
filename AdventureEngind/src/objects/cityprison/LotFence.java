@@ -1,5 +1,7 @@
 package objects.cityprison;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import scripts.IScriptRunner;
@@ -9,7 +11,7 @@ public class LotFence extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public LotFence(){
-		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prison\\lotfence.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prison"+File.separatorChar+"lotfence.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

@@ -1,5 +1,7 @@
 package data.rooms.outsidewhitehouse;
 
+import java.io.File;
+
 import objects.BackgroundObject;
 import objects.BarrierObject;
 import objects.IBarrierObject;
@@ -17,7 +19,7 @@ public class ConstitutionAndWashingMonument extends ConcreteRoom {
 		setId(15);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\constitutionandwashingtonmonument.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse"+File.separatorChar+"constitutionandwashingtonmonument.bmp");
 		addObject(background);
 		
 		IBarrierObject northBarrier = new BarrierObject();

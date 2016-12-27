@@ -22,7 +22,7 @@ public class Cop2ShootingImageRegistry implements IImageRegistry {
 	
 	private Cop2ShootingImageRegistry(){
 		try {
-			images.add(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"penn1\\cop2abc_shooting.bmp")));
+			images.add(ImageIO.read(new File(globalvariables.constants.IMAGE_LOCATION+"penn"+File.separatorChar+"cop2abc_shooting.bmp")));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

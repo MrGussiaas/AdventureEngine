@@ -1,6 +1,7 @@
 package data.rooms.outsidewhitehouse;
 
 import java.awt.Point;
+import java.io.File;
 
 import objects.BackgroundObject;
 import objects.BarrierObject;
@@ -18,7 +19,7 @@ public class SeventeenthAndPennsylvania extends ConcreteRoom {
 		setId(1);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\seventeenthandpenn.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse"+File.separatorChar+"seventeenthandpenn.bmp");
 		addObject(background);
 		
 		ITrigger southWarp = new BottomRoomTrigger(ScreenSettings.getInstance().getResWide() / 2, 100);
@@ -27,7 +28,7 @@ public class SeventeenthAndPennsylvania extends ConcreteRoom {
 		southWarp.setWidth(ScreenSettings.getInstance().getResWide());
 		southWarp.setHeight(10);
 		
-		ITrigger westWarp = new DungeonRoomTrigger(".\\rooms\\testdungeon.dgn", new Point(300, 100), 12);
+		ITrigger westWarp = new DungeonRoomTrigger("."+File.separatorChar+"rooms"+File.separatorChar+"testdungeon.dgn", new Point(300, 100), 12);
 		westWarp.setX(0);
 		westWarp.setY(0);
 		westWarp.setWidth(10);

@@ -1,6 +1,7 @@
 package data.rooms.prisoninterior;
 
 import java.awt.Point;
+import java.io.File;
 
 import objects.BackgroundObject;
 import objects.BarrierObject;
@@ -17,7 +18,7 @@ public class Interior2 extends ConcreteRoom {
 		setId(2);
 		IDrawableObject background = new BackgroundObject();
 		
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior\\PrisonInterior2.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior"+File.separatorChar+"PrisonInterior2.bmp");
 		
 		IBarrierObject NorthBarrier = new BarrierObject();
 		IBarrierObject EastBarrier = new BarrierObject();

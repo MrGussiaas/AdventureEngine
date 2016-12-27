@@ -1,5 +1,6 @@
 package commands.concretecommands;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -20,7 +21,7 @@ public class TriggerCommandSettings implements ICommand{
 	
 	public TriggerCommandSettings(){
 		mappedTriggers.put(CancelButton.class, new RemoveObjectTrigger(SettingsWindow.getinstance()));
-		mappedTriggers.put(RestartButton.class, new RestartGameTrigger(".\\rooms\\testdungeon.dgn"));
+		mappedTriggers.put(RestartButton.class, new RestartGameTrigger("."+File.separatorChar+"rooms"+File.separatorChar+"testdungeon.dgn"));
 	}
 	
 	public void runCommand(IPostProcessCommandContext context,

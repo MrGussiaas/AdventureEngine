@@ -1,5 +1,7 @@
 package data.rooms.pennave2;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import scripts.IScriptRunner;
@@ -9,7 +11,7 @@ public class ShopDoor extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public ShopDoor(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\launderyDoor.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2"+File.separatorChar+"launderyDoor.bmp");
 		
 	}
 	public IScriptRunner getActionScript() {

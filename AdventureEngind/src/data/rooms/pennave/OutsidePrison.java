@@ -1,5 +1,7 @@
 package data.rooms.pennave;
 
+import java.io.File;
+
 import objects.BackgroundObject;
 import objects.BarrierObject;
 import objects.IBarrierObject;
@@ -71,7 +73,7 @@ public class OutsidePrison extends ConcreteRoom {
 		IBarrierObject EastBarrier = new BarrierObject();
 		IBarrierObject WestBarrier = new BarrierObject();
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prison\\city_prison.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prison"+File.separatorChar+"city_prison.bmp");
 		
 		SouthBarrier.setX(0);
 		SouthBarrier.setY(ScreenSettings.getInstance().getResHeight() - 10);

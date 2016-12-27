@@ -1,6 +1,7 @@
 package data.rooms.achmere;
 
 import java.awt.Point;
+import java.io.File;
 
 import objects.BackgroundObject;
 import objects.BarrierObject;
@@ -96,9 +97,9 @@ public class AchmereInterior extends ConcreteRoom {
 		
 		
 		
-		desk.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmeresdesk.bmp");
-		aisle1.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\aisle1.bmp");
-		aisle2.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\aisle1.bmp");
+		desk.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior"+File.separatorChar+"achmeresdesk.bmp");
+		aisle1.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior"+File.separatorChar+"aisle1.bmp");
+		aisle2.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior"+File.separatorChar+"aisle1.bmp");
 		
 		desk.setX(484);
 		desk.setY(130);
@@ -116,7 +117,7 @@ public class AchmereInterior extends ConcreteRoom {
 		achmere.setY(300);
 		achmere.setInternalState(IGameObject.InternalObjectStates.DEFAULT_STATE);
 		
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior\\achmierinterior.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereinterior"+File.separatorChar+"achmierinterior.bmp");
 		
 		
 		IBarrierObject westBarrier = new BarrierObject();
@@ -137,7 +138,7 @@ public class AchmereInterior extends ConcreteRoom {
 		northBarrier.setWidth(ScreenSettings.getInstance().getResWide());
 		northBarrier.setHeight(10);
 		
-		ITrigger warpDungeon = new DungeonRoomTrigger(".\\rooms\\testdungeon.dgn", new Point(300, 100), 9);
+		ITrigger warpDungeon = new DungeonRoomTrigger("."+File.separatorChar+"rooms"+File.separatorChar+"testdungeon.dgn", new Point(300, 100), 9);
 		warpDungeon.setX(0);
 		warpDungeon.setY(ScreenSettings.getInstance().getResHeight() - 10);
 		warpDungeon.setWidth(ScreenSettings.getInstance().getResWide());

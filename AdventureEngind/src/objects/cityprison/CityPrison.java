@@ -2,6 +2,7 @@ package objects.cityprison;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 
 import objects.ConcreteDrawableObject;
 import objects.ConcreteObject;
@@ -22,7 +23,7 @@ public class CityPrison extends ConcreteDrawableObject {
 		prisonWindow.setX(125);
 		prisonWindow.setY(75);
 		prisonDoor.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
-		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison\\prisonExterior.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison"+File.separatorChar+"prisonExterior.bmp");
 
 		
 	}

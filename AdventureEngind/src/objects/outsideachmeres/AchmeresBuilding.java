@@ -2,6 +2,7 @@ package objects.outsideachmeres;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 
 import objects.ConcreteDrawableObject;
 import objects.IDrawableObject;
@@ -15,7 +16,7 @@ public class AchmeresBuilding extends ConcreteDrawableObject {
 	private IDrawableObject door = new AchmeresDoor();
 	private IDrawableObject sign = new AchmereSign();
 	public AchmeresBuilding(){
-		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresBuilding.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2"+File.separatorChar+"achmeresBuilding.bmp");
 		sign.setX(225);
 		sign.setY(22);
 		door.setX(245);

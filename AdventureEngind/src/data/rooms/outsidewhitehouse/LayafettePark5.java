@@ -1,5 +1,7 @@
 package data.rooms.outsidewhitehouse;
 
+import java.io.File;
+
 import objects.BackgroundObject;
 import objects.BarrierObject;
 import objects.IBarrierObject;
@@ -17,7 +19,7 @@ public class LayafettePark5 extends ConcreteRoom {
 		setId(14);
 		
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse\\layafettepar5.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"whitehouse"+File.separatorChar+"layafettepar5.bmp");
 		addObject(background);
 		
 		IBarrierObject southBarrier = new BarrierObject();

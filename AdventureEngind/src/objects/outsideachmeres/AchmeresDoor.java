@@ -29,7 +29,7 @@ public class AchmeresDoor extends ConcreteDrawableObject implements IScriptableO
 	
 	public AchmeresDoor(){
 		setInternalState(IGameObject.InternalObjectStates.CLOSED);
-		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\achmeresdoorClosed.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2"+File.separatorChar+"achmeresdoorClosed.bmp");
 	}
 
 	@Override
@@ -40,7 +40,7 @@ public class AchmeresDoor extends ConcreteDrawableObject implements IScriptableO
 		actionRunner.addScript(new InitWayPointScript(new Point(300, 245)));
 		actionRunner.addScript(walkToScript);
 		actionRunner.addScript(new SetObjectInternalStateScript(IGameObject.InternalObjectStates.OPEN, this));
-		actionRunner.addScript(new AddNewTriggerEventToQueueScript(new TriggerEvent(new DungeonTrigger(".\\rooms\\achmere.dgn"))));
+		actionRunner.addScript(new AddNewTriggerEventToQueueScript(new TriggerEvent(new DungeonTrigger("."+File.separatorChar+"rooms"+File.separatorChar+"achmere.dgn"))));
 		
 		return actionRunner;
 	}

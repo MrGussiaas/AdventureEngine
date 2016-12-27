@@ -1,5 +1,6 @@
 package trigger.processors;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -8,7 +9,6 @@ import java.io.ObjectInputStream;
 import javax.swing.JOptionPane;
 
 import objects.restoregamedialog.RestoreGameDialog;
-
 import trigger.ITrigger;
 import ui.IGameModel;
 import ui.IUIController;
@@ -36,7 +36,7 @@ public class RestoreGameProcessor implements IDungeonProcessor {
 	
 	try {
 		
-		ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(".\\rooms\\testdungeon.dgn"));
+		ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("."+File.separatorChar+"rooms"+File.separatorChar+"testdungeon.dgn"));
 		newDungeon = (IDungeon) inputStream.readObject();
 		dungeon = null;
 		

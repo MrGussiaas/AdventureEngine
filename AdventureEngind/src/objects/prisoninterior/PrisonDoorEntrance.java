@@ -1,5 +1,7 @@
 package objects.prisoninterior;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import renderingpolicies.IImagePolicy;
@@ -11,7 +13,7 @@ public class PrisonDoorEntrance extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public PrisonDoorEntrance(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior\\doorentrance.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterio"+File.separatorChar+"doorentrance.bmp");
 		IImagePolicy transparency = new TransparencyPolicy(0xFFFA45EC);
 		super.addImagePolicy(transparency);
 		setInternalState(IGameObject.InternalObjectStates.CLOSED);

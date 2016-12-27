@@ -4,9 +4,9 @@ import io.IIOHandler;
 
 import java.awt.Image;
 import java.awt.Point;
+import java.io.File;
 
 import commands.runners.ConcreteRunner;
-
 import objects.ConcreteDrawableObject;
 import objects.ConcreteMoveableObject;
 import objects.IDrawableObject;
@@ -48,7 +48,7 @@ public class Cop1 extends ConcreteDrawableObject implements IScriptableObject{
 	public IScriptRunner getActionScript() {
 		IScriptRunner actionScript = new ConcreteScriptRunner();
 		IDrawableObject redHeart = new ConcreteMoveableObject();
-		redHeart.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn1\\redHeart.bmp");
+		redHeart.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn1"+File.separatorChar+"redHeart.bmp");
 		redHeart.setX(360);
 		redHeart.setY(180);
 		

@@ -1,5 +1,7 @@
 package data.rooms.achmere;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import renderingpolicies.TransparencyPolicy;
@@ -11,7 +13,7 @@ public class WineCooler extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public WineCooler(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereInterior\\wineCooler.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereInterior"+File.separatorChar+"wineCooler.bmp");
 		super.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 	}
 	

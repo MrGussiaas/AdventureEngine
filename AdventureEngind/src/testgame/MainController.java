@@ -55,7 +55,7 @@ public class MainController  implements ITriggerHandler{
 		
 		try {
 			
-			ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream(".\\rooms\\testdungeon.dgn"));
+			ObjectInputStream inputStream = new ObjectInputStream(new FileInputStream("./rooms/testdungeon.dgn"));
 			dungeon = (IDungeon) inputStream.readObject();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block

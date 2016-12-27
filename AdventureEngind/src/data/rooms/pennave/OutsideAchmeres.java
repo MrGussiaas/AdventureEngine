@@ -1,5 +1,7 @@
 package data.rooms.pennave;
 
+import java.io.File;
+
 import objects.BackgroundObject;
 import objects.BarrierObject;
 import objects.IBarrierObject;
@@ -17,7 +19,7 @@ public class OutsideAchmeres extends ConcreteRoom {
 		IDrawableObject background = new BackgroundObject();
 		IDrawableObject achmeresBuilding = new AchmeresBuilding();;
 		
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2\\nineteenth2.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"nineteenth2"+File.separatorChar+"nineteenth2.bmp");
 		addObject(background);
 		
 		IBarrierObject eastBarrier = new BarrierObject();

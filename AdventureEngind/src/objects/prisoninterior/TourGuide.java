@@ -1,12 +1,12 @@
 package objects.prisoninterior;
 
 import java.awt.Point;
+import java.io.File;
 
 import commands.concretecommands.IObjectCommand;
 import commands.concretecommands.IObjectCommandContext;
 import commands.concretecommands.ObjectCommandContext;
 import commands.concretecommands.ObjectCommandRegistry;
-
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import objects.IGameObject.InternalObjectStates;
@@ -81,7 +81,7 @@ public class TourGuide extends ConcreteDrawableObject implements IScriptableObje
 	}
 
 	public TourGuide(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prisoninterior\\tourguide.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"prisoninterior"+File.separatorChar+"tourguide.bmp");
 		super.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 	}
 

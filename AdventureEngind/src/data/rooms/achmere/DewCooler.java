@@ -1,5 +1,7 @@
 package data.rooms.achmere;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import renderingpolicies.TransparencyPolicy;
@@ -11,7 +13,7 @@ public class DewCooler extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public DewCooler(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereInterior\\dewCooler.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"achmereInterior"+File.separatorChar+"dewCooler.bmp");
 		super.addImagePolicy(new TransparencyPolicy(0xFFFA45EC));
 	}
 	

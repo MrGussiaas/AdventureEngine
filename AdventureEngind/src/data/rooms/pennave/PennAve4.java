@@ -1,5 +1,7 @@
 package data.rooms.pennave;
 
+import java.io.File;
+
 import objects.BackgroundObject;
 import objects.BarrierObject;
 import objects.IBarrierObject;
@@ -15,7 +17,7 @@ public class PennAve4 extends ConcreteRoom {
 	public PennAve4(){
 		setId(10);
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn4\\pennave4.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn4"+File.separatorChar+"pennave4.bmp");
 		addObject(background);
 		
 		IBarrierObject southBarrier = new BarrierObject();

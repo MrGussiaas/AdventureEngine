@@ -1,6 +1,7 @@
 package data.rooms.pennave;
 
 import java.awt.Point;
+import java.io.File;
 
 import objects.BackgroundObject;
 import objects.BarrierObject;
@@ -16,7 +17,7 @@ public class PennAve5 extends ConcreteRoom {
 	public PennAve5(){
 		setId(12);
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn5\\penn5.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn5"+File.separatorChar+"penn5.bmp");
 		
 		IBarrierObject northBarrier = new BarrierObject();
 		IBarrierObject southBarrier = new BarrierObject();
@@ -27,7 +28,7 @@ public class PennAve5 extends ConcreteRoom {
 		northBarrier.setHeight(10);
 		northBarrier.setWidth(ScreenSettings.getInstance().getResWide());
 		
-		ITrigger eastWarp = new DungeonRoomTrigger(".\\rooms\\whiteHouseExterior.dgn", new Point(300, 100), 1);
+		ITrigger eastWarp = new DungeonRoomTrigger("."+File.separatorChar+"rooms"+File.separatorChar+"whiteHouseExterior.dgn", new Point(300, 100), 1);
 		eastWarp.setX(ScreenSettings.getInstance().getResWide() - 10);
 		eastWarp.setY(0);
 		eastWarp.setWidth(10);

@@ -2,6 +2,7 @@ package data.rooms.pennave2;
 
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.File;
 
 import objects.ConcreteDrawableObject;
 import objects.IDrawableObject;
@@ -19,7 +20,7 @@ public class CookieShop extends ConcreteDrawableObject implements
 	private IDrawableObject window2 = new ShopWindow();
 	
 	public CookieShop(){
-		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\cookieshop.bmp");
+		setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2"+File.separatorChar+"cookieshop.bmp");
 		addContainedObject(sign);
 		addContainedObject(door);
 		addContainedObject(window1);

@@ -1,5 +1,7 @@
 package objects.cityprison;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import scripts.IScriptRunner;
@@ -9,7 +11,7 @@ public class PrisonWindow extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public PrisonWindow(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison\\jailbars.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"cityprison"+File.separatorChar+"jailbars.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

@@ -1,5 +1,7 @@
 package data.rooms.pennave2;
 
+import java.io.File;
+
 import objects.ConcreteDrawableObject;
 import objects.IGameObject;
 import scripts.IScriptRunner;
@@ -9,7 +11,7 @@ public class LaunderySign extends ConcreteDrawableObject implements
 		IScriptableObject {
 
 	public LaunderySign(){
-		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn2\\launderysign.bmp");
+		super.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"penn"+File.separatorChar+"launderysign.bmp");
 	}
 	public IScriptRunner getActionScript() {
 		// TODO Auto-generated method stub

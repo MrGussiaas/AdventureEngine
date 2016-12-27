@@ -1,6 +1,7 @@
 package data.rooms.prisoninterior;
 
 import java.awt.Point;
+import java.io.File;
 
 import objects.BackgroundObject;
 import objects.BarrierObject;
@@ -23,7 +24,7 @@ public class Interior1 extends ConcreteRoom {
 	public Interior1(){
 		setId(1);
 		IDrawableObject background = new BackgroundObject();
-		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior\\PrisonInterior1.bmp");
+		background.setSpriteFile(globalvariables.constants.IMAGE_LOCATION+"PrisonInterior"+File.separatorChar+"PrisonInterior1.bmp");
 		
 		IDrawableObject tourDesk = new TourDesk();
 		tourDesk.setX(543);
@@ -82,7 +83,7 @@ public class Interior1 extends ConcreteRoom {
 
 		
 		
-		ITrigger warpDungeon = new DungeonRoomTrigger(".\\rooms\\testdungeon.dgn", new Point(200, 150), 5);
+		ITrigger warpDungeon = new DungeonRoomTrigger("."+File.separatorChar+"rooms"+File.separatorChar+"testdungeon.dgn", new Point(200, 150), 5);
 		warpDungeon.setX(0);
 		warpDungeon.setY(ScreenSettings.getInstance().getResHeight() - 10);
 		warpDungeon.setWidth(ScreenSettings.getInstance().getResWide());
