@@ -18,6 +18,8 @@ public class GraphicTimer extends Timer{
 		super(arg0, arg1);
 		
 	}
+	
+
 
 
 }

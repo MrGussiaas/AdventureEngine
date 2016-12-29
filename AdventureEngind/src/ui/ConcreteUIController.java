@@ -7,6 +7,7 @@ import java.awt.Point;
 import java.awt.Rectangle;
 import java.awt.Toolkit;
 import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -20,6 +21,8 @@ import objects.IBarrierObject;
 import objects.IDrawableObject;
 import objects.IGameObject;
 import objects.MessageBoxObject;
+import renderingpolicies.IImagePolicy;
+import renderingpolicies.ScaleUpPolicy;
 import screensettings.ScreenConverterUtils;
 import screensettings.ScreenSettings;
 import trigger.ITrigger;
@@ -33,8 +36,9 @@ public class ConcreteUIController implements IUIController {
 	private Image view;
 	private IGameModel model = null;
 	private List<ITriggerHandler> triggerHandlers = new ArrayList<ITriggerHandler>(10);
+	private IImagePolicy scaleUpRenderer;
 	private static final Comparator<IGameObject> Y_SORTER = new Comparator<IGameObject>(){
-
+		
 		@Override
 		public int compare(IGameObject arg0, IGameObject arg1) {
 			double y1 = arg0.getZIndex();
@@ -50,7 +54,8 @@ public class ConcreteUIController implements IUIController {
 
 	private TestFrame viewFrame = null;
 	public ConcreteUIController(TestFrame viewFrame){
-		view = new BufferedImage((int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight(), BufferedImage.TYPE_3BYTE_BGR);
+		view = new BufferedImage(viewFrame.getWidth(), viewFrame.getHeight(), BufferedImage.TYPE_3BYTE_BGR);
+		scaleUpRenderer = new ScaleUpPolicy(view.getWidth(null), view.getHeight(null));
 		this.viewFrame = viewFrame;
 	}
 	
@@ -60,12 +65,15 @@ public class ConcreteUIController implements IUIController {
 
 	
 	public void refreshView() {
-		Graphics graphics = view.getGraphics();
-		Rectangle clipSize = new Rectangle(0, 0, ScreenSettings.getInstance().getResWide(), ScreenSettings.getInstance().getResHeight());
-		clipSize = ScreenConverterUtils.getScaledDimension(clipSize, ScreenSettings.getInstance());
-		graphics.setClip((int)clipSize.getX(), (int)clipSize.getY(), (int)clipSize.getWidth(), (int)clipSize.getHeight());
-		graphics.setColor(Color.WHITE);
-		graphics.fillRect(0, 0, view.getWidth(null), view.getHeight(null));
+		//Graphics graphics = view.getGraphics();
+		BufferedImage nonScaledImage = new BufferedImage(ScreenSettings.getInstance().getResWide(), ScreenSettings.getInstance().getResHeight(),BufferedImage.TYPE_INT_RGB);
+	    Graphics preScaledGraphics = nonScaledImage.getGraphics();
+				
+		//Rectangle clipSize = new Rectangle(0, 0, ScreenSettings.getInstance().getResWide(), ScreenSettings.getInstance().getResHeight());
+		//clipSize = ScreenConverterUtils.getScaledDimension(clipSize, ScreenSettings.getInstance());
+		//preScaledGraphics.setClip((int)clipSize.getX(), (int)clipSize.getY(), (int)clipSize.getWidth(), (int)clipSize.getHeight());
+		//preScaledGraphics.setColor(Color.WHITE);
+		//preScaledGraphics.fillRect(0, 0, view.getWidth(null), view.getHeight(null));
 		model.sortObjects(Y_SORTER);
 
 		IDrawableObject bgObject = model.getBackgroundObject();
@@ -77,7 +85,7 @@ public class ConcreteUIController implements IUIController {
 			int y = (int) scaledDim.getY();
 			int width = (int) scaledDim.getWidth();
 			int height = (int) scaledDim.getHeight();
-			graphics.drawImage(image, x, y, x+width, y+height, 0, 0, (int)bgObject.getWidth(), (int)bgObject.getHeight(), null);
+			preScaledGraphics.drawImage(image, x, y, x+width, y+height, 0, 0, (int)bgObject.getWidth(), (int)bgObject.getHeight(), null);
 		
 		}
 		
@@ -92,17 +100,17 @@ public class ConcreteUIController implements IUIController {
 			int y = (int) scaledDim.getY();
 			int width = (int) scaledDim.getWidth();
 			int height = (int) scaledDim.getHeight();
-			graphics.drawImage(image, x, y, x+width, y+height, 0, 0, (int)object.getWidth(), (int)object.getHeight(), null);
-			graphics.setColor(Color.BLACK);
+			preScaledGraphics.drawImage(image, x, y, x+width, y+height, 0, 0, (int)object.getWidth(), (int)object.getHeight(), null);
+			preScaledGraphics.setColor(Color.BLACK);
 			
-			graphics.drawRect((int)object.getHotSpot().getX() * ScreenConverterUtils.getPixelWidth(ScreenSettings.getInstance()), (int)object.getHotSpot().getY() * ScreenConverterUtils.getPixelHeight(ScreenSettings.getInstance()), 5, 5);
+			preScaledGraphics.drawRect((int)object.getHotSpot().getX(), (int)object.getHotSpot().getY(), 5, 5);
 			//graphics.drawImage(img, dx1, dy1, dx2, dy2, sx1, sy1, sx2, sy2, observer)
 			//graphics.drawImage(image, x, y, null);
 			
 			
 		}
 		
-		graphics.setColor(Color.cyan);
+		preScaledGraphics.setColor(Color.cyan);
 		for(int i = 0, n = model.getTriggerCount(); i < n; i++){
 			ITrigger trigger = model.getTrigger(i);
 			Rectangle dimRect = ScreenConverterUtils.getScaledDimension(trigger, ScreenSettings.getInstance());
@@ -110,29 +118,29 @@ public class ConcreteUIController implements IUIController {
 			int y = (int) dimRect.getY();
 			int width = (int) dimRect.getWidth();
 			int height = (int) dimRect.getHeight();
-			graphics.fillRect(x, y, width, height);
+			preScaledGraphics.fillRect(x, y, width, height);
 		}
 		
 		
 		for(int i = 0, n = model.getBarrierCount(); i < n; i++){
-			graphics.setColor(Color.pink);
+			preScaledGraphics.setColor(Color.pink);
 			IBarrierObject barrier = model.getBarrier(i);
 			Rectangle dimRect = ScreenConverterUtils.getScaledDimension(barrier, ScreenSettings.getInstance());
 			int x = (int) dimRect.getX();
 			int y = (int) dimRect.getY();
 			int width = (int) dimRect.getWidth();
 			int height = (int) dimRect.getHeight();
-			graphics.fillRect(x, y, width, height);
-			graphics.setColor(Color.black);
+			preScaledGraphics.fillRect(x, y, width, height);
+			preScaledGraphics.setColor(Color.black);
 			int cx = x + (width / 2) - 5;
 			int cy = y + (height / 2) - 5;
-			graphics.drawString(""+i, cx, cy);
+			preScaledGraphics.drawString(""+i, cx, cy);
 		}
 		
 		viewFrame.setCursor(model.getCursor());
 		if(model.getOnScreenMessage() != null){
 			IDrawableObject message = new MessageBoxObject(model.getOnScreenMessage());
-			graphics.drawImage(message.createImage(), 25, 100, null);
+			preScaledGraphics.drawImage(message.createImage(), 25, 100, null);
 		}
 		List<Point> l1 = new ArrayList<Point>(10);
 		l1.add(model.getAvatar().getHotSpot());
@@ -142,11 +150,15 @@ public class ConcreteUIController implements IUIController {
 		for(int i = 1, n = l1.size(); i < n; i++){
 			Point p1 = l1.get(i - 1);
 			Point p2 = l1.get(i);
-			graphics.setColor(Color.cyan);
-			graphics.fillRect((int)p2.getX() * 2, (int)p2.getY() * 2, 10 ,10) ;
-			graphics.setColor(Color.black);
-			graphics.drawString(""+i, (int)p2.getX() * 2 + 5, (int)p2.getY() * 2 + 5);
+			preScaledGraphics.setColor(Color.cyan);
+			preScaledGraphics.fillRect((int)p2.getX() * 2, (int)p2.getY() * 2, 10 ,10) ;
+			preScaledGraphics.setColor(Color.black);
+			preScaledGraphics.drawString(""+i, (int)p2.getX() * 2 + 5, (int)p2.getY() * 2 + 5);
 		}
+
+
+		view.getGraphics().drawImage(scaleUpRenderer.renderImage(nonScaledImage), 0, 0, null);
+
 
 		
 

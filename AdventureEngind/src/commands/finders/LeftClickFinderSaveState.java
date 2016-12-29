@@ -20,8 +20,7 @@ public class LeftClickFinderSaveState extends LeftClickFinder {
 		int y = castedEvent.getY();
 		this.xClick = x;
 		this.yClick = y;
-		System.out.println("x: " + x);
-		System.out.println("y: " + y);
+
 		IGameObject answer = null;
 		for(int i = 0, n = SaveGameDialogue.getInstance().getContainedObjectsCount(); i < n; i++){
 			IGameObject current = SaveGameDialogue.getInstance().getContainedObject(i);

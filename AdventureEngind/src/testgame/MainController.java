@@ -67,7 +67,7 @@ public class MainController  implements ITriggerHandler{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
+
 		IRoom currentRoom = dungeon.getInitialRoom();
 		IGameModel testModel = ModelConverter.getInstance().convertRoomToModel(currentRoom);
 		dungeon.setCurrentRoom(currentRoom);
@@ -76,15 +76,17 @@ public class MainController  implements ITriggerHandler{
 		avatarObject.setY(180);
 		avatarObject.setHeight(avatarObject.createImage().getHeight(null));
 		avatarObject.setWidth(avatarObject.createImage().getWidth(null));
-		int pixelWidth = ScreenConverterUtils.getPixelWidth(ScreenSettings.getInstance());
-		int pixelHeight = ScreenConverterUtils.getPixelHeight(ScreenSettings.getInstance());
+
 		testModel.addObject(avatarObject);
 		testModel.setAvatar(avatarObject);
 		TestFrame frame = new TestFrame();
+		frame.setBounds(0,0,641, 481);
+		
+		//frame.setBounds(0,0,(int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
 		controller = new ConcreteUIController(frame);
 		controller.setModel(testModel);
 		//frame.removeAll();
-		frame.setUndecorated(true);
+		frame.setUndecorated(false);
 		frame.setVisible(true);
 		frame.setTitle("test game");
 		
@@ -107,7 +109,7 @@ public class MainController  implements ITriggerHandler{
 		controller.addITriggerHandler(dungeonHandler);
 		controller.addITriggerHandler(this);
 		//frame.setBounds(0,0,ScreenSettings.getInstance().getResWide(), ScreenSettings.getInstance().getResHeight());
-		frame.setBounds(0,0,(int)Toolkit.getDefaultToolkit().getScreenSize().getWidth(), (int)Toolkit.getDefaultToolkit().getScreenSize().getHeight());
+		
 		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.refresh(controller.getView());

@@ -23,9 +23,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 import commands.UniversalCommandQueue;
-
 import screensettings.ScreenConverterUtils;
 import screensettings.ScreenSettings;
 import testgame.GraphicTimer;
@@ -35,7 +35,7 @@ public class TestFrame extends JFrame implements IOPropogater{
 	private List<IIOHandler> ioHandlers = new ArrayList<IIOHandler>(10);
 	private Point previousPoint = new Point(0, 0);
 	
-	private class ICGraphicTimer implements ActionListener{
+	private class ICGraphicTimer implements Runnable, ActionListener{
 		private TestFrame testFrame;
 		private int eventCount = 0;
 		private int secondsPassedSum = 0;
@@ -44,6 +44,12 @@ public class TestFrame extends JFrame implements IOPropogater{
 		public ICGraphicTimer (TestFrame testFrame){
 			this.testFrame = testFrame;
 		}
+		
+		public ICGraphicTimer(int frameCount, TestFrame testFrame){
+			this.frameCount = frameCount;
+			this.testFrame = testFrame;
+		}
+		
 		public void actionPerformed(ActionEvent e) {
 		//	long curTime = System.currentTimeMillis();
 			
@@ -70,6 +76,24 @@ public class TestFrame extends JFrame implements IOPropogater{
 			
 			
 		}
+		@Override
+		public void run() {
+
+			//	long curTime = System.currentTimeMillis();
+				int delay = 1000 / frameCount;
+				while(true){
+				fireEvent(new RefreshEvent(testFrame));
+				try {
+					Thread.sleep(delay);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				}
+				
+
+			
+		}
 	};
 	
 	public TestFrame(){
@@ -77,7 +101,7 @@ public class TestFrame extends JFrame implements IOPropogater{
 		getContentPane().addMouseListener(this);
 		getContentPane().addMouseMotionListener(this);
 		addKeyListener(this);
-		myTimer.start();
+		new Thread(new ICGraphicTimer(128, this)).start();
 	}
 	
 	public void refresh(Image img){
@@ -108,11 +132,13 @@ public class TestFrame extends JFrame implements IOPropogater{
 	public void mousePressed(MouseEvent arg0) {
 		if(arg0.getButton() == MouseEvent.BUTTON1){
 			//System.out.println("y: " + arg0.getY() + "casted: " + ((int)arg0.getY()));
-			int pixWid = ScreenConverterUtils.getPixelWidth(ScreenSettings.getInstance());
-			int pixHt = ScreenConverterUtils.getPixelHeight(ScreenSettings.getInstance());
-			int tranx = (arg0.getX() - (arg0.getX() % pixWid)) / pixWid;
-			int trany = (arg0.getY() - (arg0.getY() % pixHt)) / pixHt;
-			fireEvent(new LeftPressEvent(tranx, trany));
+			//int pixWid = ScreenConverterUtils.getPixelWidth(ScreenSettings.getInstance());
+			//int pixHt = ScreenConverterUtils.getPixelHeight(ScreenSettings.getInstance());
+			//int tilesDown = ScreenConverterUtils.getHorizontalSplits(getHeight(), ScreenSettings.getInstance().getResHeight());
+			//int tilesAcross = ScreenConverterUtils.getVerticalSplits(getWidth(), ScreenSettings.getInstance().getResWide())
+			//int tranx = (arg0.getX() - (arg0.getX() % pixWid)) / pixWid;
+			//int trany = (arg0.getY() - (arg0.getY() % pixHt)) / pixHt;
+			fireEvent(new LeftPressEvent(arg0.getX(), arg0.getY()));
 		}
 		
 	}
@@ -124,10 +150,22 @@ public class TestFrame extends JFrame implements IOPropogater{
 		}
 		if(arg0.getButton() == MouseEvent.BUTTON1){
 			//System.out.println("y: " + arg0.getY() + "casted: " + ((int)arg0.getY()));
-			int pixWid = ScreenConverterUtils.getPixelWidth(ScreenSettings.getInstance());
-			int pixHt = ScreenConverterUtils.getPixelHeight(ScreenSettings.getInstance());
-			int tranx = (arg0.getX() - (arg0.getX() % pixWid)) / pixWid;
-			int trany = (arg0.getY() - (arg0.getY() % pixHt)) / pixHt;
+
+			int pixWid = ScreenConverterUtils.getPixelWidth(ScreenSettings.getInstance(), getWidth());
+			int pixHt = ScreenConverterUtils.getPixelHeight(ScreenSettings.getInstance(), getHeight());
+			int mx = (arg0.getX() - (arg0.getX() % pixWid)) / pixWid;
+			int my = (arg0.getY() - (arg0.getY() % pixHt)) / pixHt;
+			int tilesDown = ScreenConverterUtils.getHorizontalSplits(this.getHeight() / pixHt, ScreenSettings.getInstance().getResHeight());
+			int tilesAcross = ScreenConverterUtils.getVerticalSplits(this.getWidth() / pixWid, ScreenSettings.getInstance().getResWide());
+			int clipWidth = (tilesAcross > 0 ? this.getWidth() / (tilesAcross) : this.getWidth()) / pixWid;
+			int clipHeight = (tilesDown > 0 ? this.getHeight() / (tilesDown) : this.getHeight()) / pixHt;
+
+			int xOffset = (mx - (mx % clipWidth)) / ((clipWidth));
+			
+			int yOffset = (my - (my % clipHeight)) / ((clipHeight));
+
+			int trany = my - yOffset;
+			int tranx = mx - xOffset;
 			fireEvent(new LeftClickEvent(tranx, trany));
 		}
 		
@@ -193,10 +231,9 @@ public class TestFrame extends JFrame implements IOPropogater{
 
 	@Override
 	public void mouseMoved(MouseEvent arg0) {
-		int pixWid = ScreenConverterUtils.getPixelWidth(ScreenSettings.getInstance());
-		int pixHt = ScreenConverterUtils.getPixelHeight(ScreenSettings.getInstance());
-		int tranx = (arg0.getX() - (arg0.getX() % pixWid)) / pixWid;
-		int trany = (arg0.getY() - (arg0.getY() % pixHt)) / pixHt;
+
+		int tranx = arg0.getX();
+		int trany = arg0.getY();
 		if(trany <= 50 && previousPoint.getY() > 50){
 			fireEvent(new MouseEnteredHudAreaEvent());
 		}

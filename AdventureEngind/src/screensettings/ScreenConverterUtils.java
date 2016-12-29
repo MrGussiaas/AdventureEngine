@@ -28,6 +28,16 @@ public class ScreenConverterUtils {
 		//return 1;
 	}
 	
+	public static int getPixelWidth(IScreenSettings settings, int viewWidth){;
+		int offSet = settings.getResWide();
+		return viewWidth / offSet;
+	}
+	
+	public static int getPixelHeight(IScreenSettings settings, int viewHeight){;
+	int offSet = settings.getResHeight();
+	return viewHeight / offSet;
+}
+	
 	public static int getPixelHeight(IScreenSettings settings){
 		int realHeight = (int) Toolkit.getDefaultToolkit().getScreenSize().getHeight();
 		int offSet = settings.getResHeight();
@@ -36,14 +46,25 @@ public class ScreenConverterUtils {
 	}
 	
 	public static Rectangle getScaledDimension(IGameObject object, IScreenSettings settings){
-		int pixWid = getPixelWidth(settings);
-		int pixHgt = getPixelHeight(settings);
-		
-		int tranX = (int) (pixWid * object.getX());
-		int tranY = (int) (pixHgt * object.getY());
-		int tranWid = (int) (pixWid * object.getWidth());
-		int tranHgt = (int) (pixHgt * object.getHeight());
+		int tranX = (int) object.getX();
+		int tranY = (int) object.getY();
+		int tranWid = (int) object.getWidth();
+		int tranHgt = (int) object.getHeight();
 		return new Rectangle(tranX, tranY, tranWid, tranHgt);
+		
+	}
+	
+	public static int getVerticalSplits(int viewWidth, int normalizedWidth){
+
+		
+		return (viewWidth - normalizedWidth) + 1;
+		
+	}
+	
+	public static int getHorizontalSplits(int viewHeight, int normalizedHeight){
+
+		
+		return (viewHeight - normalizedHeight) + 1;
 		
 	}
 	

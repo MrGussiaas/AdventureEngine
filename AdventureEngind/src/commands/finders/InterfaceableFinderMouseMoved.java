@@ -20,8 +20,7 @@ public class InterfaceableFinderMouseMoved extends LeftClickFinder {
 		int y = (int) castedEvent.getNewPoint().getY();
 		this.xClick = x;
 		this.yClick = y;
-		System.out.println("x: " + x);
-		System.out.println("y: " + y);
+
 		IGameObject answer = null;
 		for(int i = 0, n = model.getObjectCount(); i < n; i++){
 			IGameObject current = model.getObject(i);
